@@ -22,7 +22,8 @@ public class SMSRunner {
 		// infinite loop for system
 		while (true) {
 			// user selection from menu
-			System.out.println("Are you a\n1.Show Students List\n2.Show Courses List\n3.Student Login\n4.Quit \n");
+			System.out.println("Select From List:\n1.Show Students List\n2.Show Courses List\n3.Student Login\n4.Quit \n");
+			System.out.println();
 			// save user selection
 			userInput = input.nextInt();
 			// switch case for user input
@@ -31,23 +32,28 @@ public class SMSRunner {
 			case 1:
 				List<Student> stuList = s.getAllStudents();
 				// print on console all students
+				System.out.println("All Students:");
 				System.out.printf("%-35s|%-25s \n", "Email", "Name");
+				System.out.println();
 				for (Student x : stuList) {
 					System.out.printf("%-35s|%-25s \n", x.getsEmail(), x.getsName());
 
 				}
+				System.out.println();
 				break;
 			case 2:
 				// get all courses
 				List<Course> AllCourses = c.getAllCourses();
+				System.out.println("All Courses:");
 				// print on console
 				System.out.printf("%-3s|%-35s|%-35s \n", "#", "Instructor Name", "Course Name");
-
+				System.out.println();
 				for (Course x : AllCourses) {
 
 					System.out.printf("%-3s|%-35s|%-35s \n", x.getcId(), x.getcInstructorName(), x.getcName());
 
 				}
+				System.out.println();
 				break;
 
 			case 3:
